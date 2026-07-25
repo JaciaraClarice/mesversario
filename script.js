@@ -1,0 +1,86 @@
+const photos = [];
+
+for(let i = 1; i <= 35; i++){
+    photos.push(`img/foto${i}.jpeg`);
+}
+
+const gallery = document.getElementById("gallery");
+const startBtn = document.getElementById("startBtn");
+const music = document.getElementById("music");
+const readLetterBtn = document.getElementById("readLetterBtn");
+const finalMessage = document.getElementById("finalMessage");
+
+// Borboletas
+
+for(let i = 0; i < 18; i++){
+
+    const butterfly = document.createElement("div");
+
+    butterfly.classList.add("butterfly");
+
+    butterfly.innerHTML = "🦋";
+
+    butterfly.style.top =
+    Math.random() * 100 + "%";
+
+    butterfly.style.left =
+    Math.random() * 100 + "%";
+
+    butterfly.style.animationDelay =
+    Math.random() * 10 + "s";
+
+    document.body.appendChild(butterfly);
+}
+
+startBtn.addEventListener("click", ()=>{
+
+    music.play();
+
+    document.getElementById("intro")
+    .style.display = "none";
+
+    let delay = 0;
+
+    photos.forEach((src)=>{
+
+        setTimeout(()=>{
+
+            const img =
+            document.createElement("img");
+
+            img.src = src;
+
+            img.classList.add("photo");
+
+            img.style.left =
+            Math.random() * 85 + "%";
+
+            img.style.top =
+            Math.random() * 80 + "%";
+
+            gallery.appendChild(img);
+
+            setTimeout(()=>{
+                img.classList.add("show");
+            },100);
+
+        },delay);
+
+        delay += 600;
+    });
+
+    setTimeout(()=>{
+
+        readLetterBtn.style.display = "block";
+
+    }, delay + 1000);
+
+});
+
+readLetterBtn.addEventListener("click", ()=>{
+
+    finalMessage.style.display = "flex";
+
+    readLetterBtn.style.display = "none";
+
+});

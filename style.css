@@ -1,0 +1,247 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    min-height:100vh;
+
+    background:linear-gradient(
+        135deg,
+        #fff8fc,
+        #ffd6e8,
+        #fff8fc
+    );
+
+    font-family:"Segoe UI", sans-serif;
+}
+
+/* TELA INICIAL E CARTA */
+
+#intro,
+#finalMessage{
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+#intro{
+    z-index:1000;
+}
+
+.card{
+    width:90%;
+    max-width:850px;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    border:3px solid #d4af37;
+
+    box-shadow:
+    0 0 30px rgba(212,175,55,.4);
+}
+
+h1,h2,h3{
+    color:#d4af37;
+}
+
+p{
+    margin-top:15px;
+    line-height:1.7;
+    color:#7b5f68;
+}
+
+button{
+    margin-top:25px;
+
+    border:none;
+
+    padding:15px 30px;
+
+    border-radius:30px;
+
+    background:#d4af37;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+/* GALERIA */
+
+#gallery{
+    position:relative;
+    width:100vw;
+    height:100vh;
+}
+
+.photo{
+    position:absolute;
+
+    width:180px;
+    height:240px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+    border:6px solid white;
+
+    box-shadow:
+    0 0 20px rgba(0,0,0,.2);
+
+    opacity:0;
+
+    transition:
+    opacity .8s,
+    transform .8s;
+}
+
+.photo.show{
+    opacity:1;
+}
+
+/* CARTA FINAL */
+
+#finalMessage{
+    display:none;
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(10px);
+
+    z-index:99999;
+}
+
+#finalMessage .card{
+    max-height:80vh;
+    overflow-y:auto;
+}
+
+#finalMessage h2{
+    margin-bottom:20px;
+}
+
+#finalMessage h3{
+    margin-top:25px;
+}
+
+#finalMessage p{
+    font-size:18px;
+}
+
+/* BOTÃO DA CARTA */
+
+#readLetterBtn{
+    display:none;
+
+    position:fixed;
+
+    bottom:40px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:9999;
+
+    padding:15px 30px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#d4af37;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 0 15px rgba(212,175,55,.5);
+}
+
+#readLetterBtn:hover{
+    transform:
+    translateX(-50%)
+    scale(1.05);
+}
+
+/* BORBOLETAS */
+
+.butterfly{
+    position:absolute;
+
+    font-size:30px;
+
+    z-index:5;
+
+    pointer-events:none;
+
+    animation:fly 14s linear infinite;
+}
+
+@keyframes fly{
+
+    0%{
+        transform:
+        translate(-100px,50px)
+        rotate(-10deg);
+    }
+
+    25%{
+        transform:
+        translate(25vw,-30px)
+        rotate(10deg);
+    }
+
+    50%{
+        transform:
+        translate(50vw,40px)
+        rotate(-8deg);
+    }
+
+    75%{
+        transform:
+        translate(75vw,-20px)
+        rotate(12deg);
+    }
+
+    100%{
+        transform:
+        translate(110vw,30px)
+        rotate(-10deg);
+    }
+
+}
