@@ -6,7 +6,7 @@
 
 body{
     overflow-x:hidden;
-    min-height:100dvh;
+    min-height:100vh;
 
     background:linear-gradient(
         135deg,
@@ -18,32 +18,25 @@ body{
     font-family:"Segoe UI", sans-serif;
 }
 
-/* TELA INICIAL E CARTA */
+/* TELA INICIAL */
 
 #intro{
     position:fixed;
     inset:0;
 
-    width:100%;
-    height:100%;
-
     display:flex;
     justify-content:center;
     align-items:center;
-}
 
-#intro{
     z-index:1000;
 }
 
 .card{
     width:min(90%,850px);
 
-    margin:auto;
-
     background:white;
 
-    padding:clamp(20px,4vw,40px);
+    padding:30px;
 
     border-radius:25px;
 
@@ -88,24 +81,26 @@ button{
 button:hover{
     transform:scale(1.05);
 }
-#gallery{
-    width:100%;
-    max-width:900px;
 
-    margin:20px auto;
+/* GALERIA */
+
+#gallery{
+    width:95%;
+    max-width:1000px;
+
+    margin:30px auto;
 
     display:grid;
 
     grid-template-columns:
-    repeat(2, 1fr);
+    repeat(auto-fit,minmax(220px,1fr));
 
     gap:15px;
-
-    padding:15px;
 }
 
 .photo{
     width:100%;
+
     aspect-ratio:3/4;
 
     object-fit:cover;
@@ -113,55 +108,19 @@ button:hover{
     display:block;
 
     border-radius:15px;
+
     border:6px solid white;
 
-    box-shadow:0 0 20px rgba(0,0,0,.2);
+    box-shadow:
+    0 0 20px rgba(0,0,0,.2);
 
     opacity:0;
+
     transition:opacity .8s;
 }
+
 .photo.show{
     opacity:1;
-}
-
-/* CARTA FINAL */
-
-#finalMessage{
-    display:none;
-
-    position:fixed;
-
-    top:0;
-    left:0;
-
-    width:100%;
-    height:100%;
-
-    justify-content:center;
-    align-items:center;
-
-    background:rgba(255,255,255,.75);
-
-    backdrop-filter:blur(10px);
-
-    z-index:99999;
-}
-
-#finalMessage .card{
-    max-height:80vh;
-    overflow-y:auto;
-}
-
-#finalMessage h2{
-    margin-bottom:20px;
-}
-
-#finalMessage h3{
-    margin-top:25px;
-}
-
-#finalMessage p{
-    font-size:18px;
 }
 
 /* BOTÃO DA CARTA */
@@ -169,16 +128,7 @@ button:hover{
 #readLetterBtn{
     display:none;
 
-    margin:30px auto;
-
-    position:static;
-
-    transform:none;
-
-    display:block;
-}
-
-    z-index:9999;
+    margin:30px auto 60px auto;
 
     padding:15px 30px;
 
@@ -198,20 +148,46 @@ button:hover{
     0 0 15px rgba(212,175,55,.5);
 }
 
-#readLetterBtn:hover{
-    transform:
-    translateX(-50%)
-    scale(1.05);
+/* CARTA */
+
+#letterMessage{
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(10px);
+
+    z-index:99999;
+}
+
+#letterMessage .card{
+    max-height:80vh;
+    overflow-y:auto;
+}
+
+#letterMessage h2{
+    margin-bottom:20px;
+}
+
+#letterMessage h3{
+    margin-top:25px;
 }
 
 /* BORBOLETAS */
 
 .butterfly{
-    position:relative;
+    position:absolute;
 
     font-size:30px;
 
-    z-index:10;
+    z-index:1;
 
     pointer-events:none;
 
@@ -249,10 +225,11 @@ button:hover{
         translate(110vw,30px)
         rotate(-10deg);
     }
-
 }
 
-    @media (max-width: 768px){
+/* RESPONSIVO */
+
+@media (max-width:768px){
 
     .card{
         width:95%;
@@ -283,9 +260,6 @@ button:hover{
 
     #gallery{
         grid-template-columns:
-        repeat(4,1fr);
-
-        gap:10px;
+        repeat(2,1fr);
     }
-
 }
