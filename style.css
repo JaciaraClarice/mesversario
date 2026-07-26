@@ -18,7 +18,7 @@ body{
     font-family:"Segoe UI", sans-serif;
 }
 
-/* TELA INICIAL E CARTA */
+/* TELA INICIAL */
 
 #intro{
     position:fixed;
@@ -30,9 +30,7 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-}
 
-#intro{
     z-index:1000;
 }
 
@@ -50,8 +48,7 @@ body{
 
     border:3px solid #d4af37;
 
-    box-shadow:
-    0 0 30px rgba(212,175,55,.4);
+    box-shadow:0 0 30px rgba(212,175,55,.4);
 }
 
 h1,h2,h3{
@@ -89,27 +86,35 @@ button:hover{
 }
 
 /* GALERIA */
-#gallery{
 
+#gallery{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-    gap:15px;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(80px,1fr));
+
+    gap:10px;
 
     width:100%;
-    padding:20px;
+
+    padding:15px;
 }
 
 .photo{
-    width:25w;
+    width:70px;
     height:auto;
 
-    border-radius:15px;
-    border:6px solid white;
+    border-radius:10px;
 
-    box-shadow:0 0 20px rgba(0,0,0,.2);
+    border:3px solid white;
+
+    box-shadow:0 0 10px rgba(0,0,0,.2);
 
     opacity:0;
+
     transition:opacity .8s;
+
+    justify-self:center;
 }
 
 .photo.show{
@@ -184,8 +189,7 @@ button:hover{
 
     cursor:pointer;
 
-    box-shadow:
-    0 0 15px rgba(212,175,55,.5);
+    box-shadow:0 0 15px rgba(212,175,55,.5);
 }
 
 #readLetterBtn:hover{
@@ -239,10 +243,11 @@ button:hover{
         translate(110vw,30px)
         rotate(-10deg);
     }
-
 }
 
-    @media (max-width: 200px){
+/* CELULAR */
+
+@media (max-width:600px){
 
     .card{
         width:95%;
@@ -273,9 +278,7 @@ button:hover{
     }
 
     .photo{
-        width:32vw;
-        max-width:140px;
+        width:55px;
     }
 
 }
-
