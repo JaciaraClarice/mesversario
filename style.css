@@ -6,7 +6,7 @@
 
 body{
     overflow-x:hidden;
-    min-height:100dvh;
+    min-height:80dvh;
 
     background:linear-gradient(
         135deg,
@@ -37,7 +37,7 @@ body{
 }
 
 .card{
-    width:min(90%,850px);
+    width:min(70%,500px);
 
     margin:auto;
 
@@ -98,14 +98,14 @@ button:hover{
     gap:20px;
 
     width:100%;
-    max-width:1400px;
+    max-width:800px;
 
     margin:auto;
     padding:20px;
 }
 
 .photo{
-    width:100%;
+    width:80%;
     aspect-ratio: 3 / 4; /* retrato */
 
     object-fit: cover;
