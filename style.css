@@ -90,20 +90,20 @@ button:hover{
 }
 
 #gallery{
+    width:95%;
+    max-width:700px;
+
+    margin:30px auto 10px auto;
+
     display:grid;
 
     grid-template-columns:
-    repeat(auto-fit,minmax(220px,1fr));
+    repeat(auto-fit,minmax(180px,1fr));
 
-    gap:20px;
+    gap:15px;
 
-    width:100%;
-    max-width:800px;
-
-    margin:auto;
-    padding:20px;
+    align-items:start;
 }
-
 .photo{
     width:50%;
     aspect-ratio: 3 / 4; /* retrato */
@@ -282,7 +282,7 @@ button:hover{
         grid-template-columns:
         repeat(2,1fr);
 
-        gap:10px;
+        gap:8px;
     }
 
 }
