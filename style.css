@@ -18,7 +18,7 @@ body{
     font-family:"Segoe UI", sans-serif;
 }
 
-/* TELA INICIAL */
+/* TELA INICIAL E CARTA */
 
 #intro{
     position:fixed;
@@ -30,17 +30,20 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
+}
 
+#intro{
     z-index:1000;
 }
 
 .card{
-    width:90%;
-    max-width:850px;
+    width:min(90%,850px);
+
+    margin:auto;
 
     background:white;
 
-    padding:40px;
+    padding:clamp(20px,4vw,40px);
 
     border-radius:25px;
 
@@ -48,7 +51,8 @@ body{
 
     border:3px solid #d4af37;
 
-    box-shadow:0 0 30px rgba(212,175,55,.4);
+    box-shadow:
+    0 0 30px rgba(212,175,55,.4);
 }
 
 h1,h2,h3{
@@ -85,36 +89,34 @@ button:hover{
     transform:scale(1.05);
 }
 
-/* GALERIA */
-
 #gallery{
     display:grid;
 
     grid-template-columns:
-    repeat(auto-fit,minmax(80px,1fr));
+    repeat(auto-fit,minmax(220px,1fr));
 
-    gap:10px;
+    gap:20px;
 
     width:100%;
+    max-width:1400px;
 
-    padding:15px;
+    margin:auto;
+    padding:20px;
 }
 
 .photo{
-    width:70px;
-    height:auto;
+    width:100%;
+    aspect-ratio: 3 / 4; /* retrato */
 
-    border-radius:10px;
+    object-fit: cover;
 
-    border:3px solid white;
+    border-radius:15px;
+    border:6px solid white;
 
-    box-shadow:0 0 10px rgba(0,0,0,.2);
+    box-shadow:0 0 20px rgba(0,0,0,.2);
 
     opacity:0;
-
     transition:opacity .8s;
-
-    justify-self:center;
 }
 
 .photo.show{
@@ -189,7 +191,8 @@ button:hover{
 
     cursor:pointer;
 
-    box-shadow:0 0 15px rgba(212,175,55,.5);
+    box-shadow:
+    0 0 15px rgba(212,175,55,.5);
 }
 
 #readLetterBtn:hover{
@@ -243,11 +246,10 @@ button:hover{
         translate(110vw,30px)
         rotate(-10deg);
     }
+
 }
 
-/* CELULAR */
-
-@media (max-width:600px){
+    @media (max-width: 768px){
 
     .card{
         width:95%;
@@ -255,30 +257,32 @@ button:hover{
     }
 
     h1{
-        font-size:1.8rem;
+        font-size:2rem;
     }
 
     h2{
-        font-size:1.3rem;
+        font-size:1.4rem;
     }
 
     h3{
-        font-size:1.1rem;
+        font-size:1.2rem;
     }
 
     p{
-        font-size:0.95rem;
-        line-height:1.5;
+        font-size:1rem;
+        line-height:1.6;
     }
 
     button{
         width:100%;
-        padding:14px;
         font-size:16px;
     }
 
-    .photo{
-        width:55px;
+    #gallery{
+        grid-template-columns:
+        repeat(2,1fr);
+
+        gap:10px;
     }
 
 }
