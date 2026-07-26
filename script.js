@@ -8,11 +8,11 @@ const gallery = document.getElementById("gallery");
 const startBtn = document.getElementById("startBtn");
 const music = document.getElementById("music");
 const readLetterBtn = document.getElementById("readLetterBtn");
-const finalMessage = document.getElementById("finalMessage");
+const letterMessage = document.getElementById("letterMessage");
 
 // Borboletas
 
-for(let i = 0; i < 18; i++){
+for(let i = 0; i < 12; i++){
 
     const butterfly = document.createElement("div");
 
@@ -21,9 +21,6 @@ for(let i = 0; i < 18; i++){
     butterfly.innerHTML = "🦋";
 
     butterfly.style.top =
-    Math.random() * 100 + "%";
-
-    butterfly.style.left =
     Math.random() * 100 + "%";
 
     butterfly.style.animationDelay =
@@ -52,7 +49,6 @@ startBtn.addEventListener("click", ()=>{
 
             img.classList.add("photo");
 
-    
             gallery.appendChild(img);
 
             setTimeout(()=>{
@@ -74,7 +70,7 @@ startBtn.addEventListener("click", ()=>{
 
 readLetterBtn.addEventListener("click", ()=>{
 
-    finalMessage.style.display = "flex";
+    letterMessage.style.display = "flex";
 
     readLetterBtn.style.display = "none";
 
