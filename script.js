@@ -1,6 +1,6 @@
 const photos = [];
 
-for(let i = 1; i <= 35; i++){
+for(let i = 1; i <= 24; i++){
     photos.push(`img/foto${i}.jpeg`);
 }
 
