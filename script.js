@@ -8,7 +8,7 @@ const gallery = document.getElementById("gallery");
 const startBtn = document.getElementById("startBtn");
 const music = document.getElementById("music");
 const readLetterBtn = document.getElementById("readLetterBtn");
-const finalMessage = document.getElementById("finalMessage");
+const letterMessage = document.getElementById("letterMessage");
 
 // Borboletas
 
@@ -32,6 +32,8 @@ for(let i = 0; i < 18; i++){
     document.body.appendChild(butterfly);
 }
 
+// Iniciar homenagem
+
 startBtn.addEventListener("click", ()=>{
 
     music.play();
@@ -39,31 +41,32 @@ startBtn.addEventListener("click", ()=>{
     document.getElementById("intro")
     .style.display = "none";
 
-    let delay = 0;
-
     photos.forEach((src)=>{
 
-    const img = document.createElement("img");
+        const img =
+        document.createElement("img");
 
-    img.src = src;
+        img.src = src;
 
-    img.classList.add("photo","show");
+        img.classList.add("photo");
 
-    gallery.appendChild(img);
+        gallery.appendChild(img);
+
+        setTimeout(()=>{
+            img.classList.add("show");
+        },100);
+
+    });
+
+    readLetterBtn.style.display = "block";
 
 });
 
-    setTimeout(()=>{
-
-        readLetterBtn.style.display = "block";
-
-    }, delay + 1000);
-
-});
+// Abrir carta
 
 readLetterBtn.addEventListener("click", ()=>{
 
-    finalMessage.style.display = "flex";
+    letterMessage.style.display = "flex";
 
     readLetterBtn.style.display = "none";
 
