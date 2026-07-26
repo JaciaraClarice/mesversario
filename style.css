@@ -169,12 +169,14 @@ button:hover{
 #readLetterBtn{
     display:none;
 
-    position:fixed;
+    margin:30px auto;
 
-    bottom:40px;
-    left:50%;
+    position:static;
 
-    transform:translateX(-50%);
+    transform:none;
+
+    display:block;
+}
 
     z-index:9999;
 
