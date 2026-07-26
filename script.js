@@ -52,12 +52,7 @@ startBtn.addEventListener("click", ()=>{
 
             img.classList.add("photo");
 
-            img.style.left =
-             Math.random() * 70 + 10 + "%";
-
-
-            img.style.top =
-               Math.random() * 60 + 10 + "%";
+    
             gallery.appendChild(img);
 
             setTimeout(()=>{
