@@ -43,26 +43,15 @@ startBtn.addEventListener("click", ()=>{
 
     photos.forEach((src)=>{
 
-        setTimeout(()=>{
+    const img = document.createElement("img");
 
-            const img =
-            document.createElement("img");
+    img.src = src;
 
-            img.src = src;
+    img.classList.add("photo","show");
 
-            img.classList.add("photo");
+    gallery.appendChild(img);
 
-    
-            gallery.appendChild(img);
-
-            setTimeout(()=>{
-                img.classList.add("show");
-            },100);
-
-        },delay);
-
-        delay += 600;
-    });
+});
 
     setTimeout(()=>{
 
