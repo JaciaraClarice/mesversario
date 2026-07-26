@@ -4,9 +4,15 @@
     box-sizing:border-box;
 }
 
-body{
+html{
+    width:100%;
     overflow-x:hidden;
-    min-height:20dvh;
+}
+
+body{
+    width:100%;
+    min-height:100dvh;
+    overflow-x:hidden;
 
     background:linear-gradient(
         135deg,
@@ -18,7 +24,12 @@ body{
     font-family:"Segoe UI", sans-serif;
 }
 
-/* TELA INICIAL E CARTA */
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* TELA INICIAL */
 
 #intro{
     position:fixed;
@@ -30,14 +41,12 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-}
 
-#intro{
     z-index:1000;
 }
 
 .card{
-    width:min(70%,500px);
+    width:min(90%,500px);
 
     margin:auto;
 
@@ -83,6 +92,8 @@ button{
     font-size:18px;
 
     transition:.3s;
+
+    max-width:100%;
 }
 
 button:hover{
@@ -98,14 +109,15 @@ button:hover{
     display:grid;
 
     grid-template-columns:
-    repeat(auto-fit,minmax(180px,1fr));
+    repeat(auto-fit,minmax(140px,1fr));
 
     gap:15px;
 
     align-items:start;
 }
+
 .photo{
-    width:50%;
+    width:100%;
     aspect-ratio: 3 / 4; /* retrato */
 
     object-fit: cover;
@@ -123,9 +135,10 @@ button:hover{
     opacity:1;
 }
 
-/* CARTA FINAL */
+/* CARTAS (final e letra) */
 
-#finalMessage{
+#finalMessage,
+#letterMessage{
     display:none;
 
     position:fixed;
@@ -144,22 +157,28 @@ button:hover{
     backdrop-filter:blur(10px);
 
     z-index:99999;
+
+    padding:20px;
 }
 
-#finalMessage .card{
+#finalMessage .card,
+#letterMessage .card{
     max-height:80vh;
     overflow-y:auto;
 }
 
-#finalMessage h2{
+#finalMessage h2,
+#letterMessage h2{
     margin-bottom:20px;
 }
 
-#finalMessage h3{
+#finalMessage h3,
+#letterMessage h3{
     margin-top:25px;
 }
 
-#finalMessage p{
+#finalMessage p,
+#letterMessage p{
     font-size:18px;
 }
 
@@ -193,6 +212,8 @@ button:hover{
 
     box-shadow:
     0 0 15px rgba(212,175,55,.5);
+
+    max-width:90%;
 }
 
 #readLetterBtn:hover{
@@ -204,7 +225,10 @@ button:hover{
 /* BORBOLETAS */
 
 .butterfly{
-    position:absolute;
+    position:fixed;
+
+    top:0;
+    left:0;
 
     font-size:30px;
 
@@ -213,13 +237,15 @@ button:hover{
     pointer-events:none;
 
     animation:fly 14s linear infinite;
+
+    will-change:transform;
 }
 
 @keyframes fly{
 
     0%{
         transform:
-        translate(-100px,50px)
+        translate(-40px,50px)
         rotate(-10deg);
     }
 
@@ -243,33 +269,33 @@ button:hover{
 
     100%{
         transform:
-        translate(110vw,30px)
+        translate(100vw,30px)
         rotate(-10deg);
     }
 
 }
 
-    @media (max-width: 600px){
+@media (max-width: 600px){
 
     .card{
-        width:95%;
+        width:92%;
         padding:20px;
     }
 
     h1{
-        font-size:2rem;
+        font-size:1.8rem;
     }
 
     h2{
-        font-size:1.4rem;
+        font-size:1.3rem;
     }
 
     h3{
-        font-size:1.2rem;
+        font-size:1.1rem;
     }
 
     p{
-        font-size:1rem;
+        font-size:0.95rem;
         line-height:1.6;
     }
 
@@ -283,6 +309,10 @@ button:hover{
         repeat(2,1fr);
 
         gap:8px;
+    }
+
+    .butterfly{
+        font-size:22px;
     }
 
 }
