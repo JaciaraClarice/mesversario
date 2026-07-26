@@ -242,7 +242,7 @@ button:hover{
 
 }
 
-    @media (max-width: 300px){
+    @media (max-width: 200px){
 
     .card{
         width:95%;
