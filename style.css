@@ -6,7 +6,7 @@
 
 body{
     overflow-x:hidden;
-    min-height:80dvh;
+    min-height:20dvh;
 
     background:linear-gradient(
         135deg,
@@ -105,7 +105,7 @@ button:hover{
 }
 
 .photo{
-    width:80%;
+    width:50%;
     aspect-ratio: 3 / 4; /* retrato */
 
     object-fit: cover;
